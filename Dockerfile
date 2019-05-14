@@ -1,4 +1,4 @@
-FROM local/c7-systemd
+FROM ryde11/c7-systemd
 LABEL maintainer="ryde <masakio@post.kek.jp>"
 
 ADD ./mongodb-org-4.0.repo /etc/yum.repos.d/
