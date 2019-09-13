@@ -1,7 +1,7 @@
 FROM ryde11/c7-systemd
 LABEL maintainer="ryde <masakio@post.kek.jp>"
 
-ADD ./mongodb-org-4.0.repo /etc/yum.repos.d/
+ADD ./mongodb-org-4.2.repo /etc/yum.repos.d/
 ADD ./disable-transparent-hugepages /etc/init.d/
 
 RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm && \
@@ -10,6 +10,7 @@ RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm && \
     ln -s /bin/pip3.6 /bin/pip3 && \
     pip3 install -U pip && \
     yum install -y git2u mongodb-org && \
+    yum -y update && \
     yum clean all
 
 RUN chmod 755 /etc/init.d/disable-transparent-hugepages && \
