@@ -7,7 +7,7 @@ ADD ./disable-transparent-hugepages /etc/init.d/
 
 # yum update & install
 RUN yum -y update && \
-    yum install -y git2u gcc zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel \
+    yum install -y git2u gcc make zlib-devel libffi-devel bzip2-devel openssl-devel ncurses-devel \
     sqlite-devel readline-devel tk-devel gdbm-devel libuuid-devel xz-devel
 
 # python install
